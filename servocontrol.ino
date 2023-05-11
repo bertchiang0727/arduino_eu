@@ -28,7 +28,10 @@ uint16_t angle_control_1(int state) {
   else if (state == 1)
     angle = 1540;
   else if (state == 2)
-    angle = 1385;
+    angle = 1375;
+    
+    else if(state==3)
+    angle=1440;
   return angle;
 }
 
@@ -39,7 +42,9 @@ uint16_t angle_control_2(int state) {
   else if (state == 1)
     angle = 1540;
   else if (state == 2)
-    angle = 1388;
+    angle = 1375;
+    else if(state==3)
+    angle=1440;
   return angle;
 }
 uint16_t angle_control_3(int state) {
@@ -49,7 +54,10 @@ uint16_t angle_control_3(int state) {
   else if (state == 1)
     angle = 1540;
   else if (state == 2)
-    angle = 1386;
+    angle = 1375;
+    
+    else if(state==3)
+    angle=1440;
   return angle;
 }
 uint16_t angle_control_4(int state) {
@@ -59,7 +67,10 @@ uint16_t angle_control_4(int state) {
   else if (state == 1)
     angle = 1540;
   else if (state == 2)
-    angle = 1385;
+    angle = 1375;
+    
+    else if(state==3)
+    angle=1440;
   return angle;
 }
 int vacuum_servo(int vacuum_servo) {
@@ -73,16 +84,25 @@ int vacuum_servo(int vacuum_servo) {
   else if (vacuum_servo == 2) {
     angle = 1380;
   }
+  else if(vacuum_servo==3){
+    angle=1500;
+    
+  }
+  else if(vacuum_servo==4){
+      angle=0;
+    }
   return angle;
 }
 int unload_the_cherry(int unload_cherry){
-   uint16_t angle=1400;
+   uint16_t angle=1600;
    if(unload_cherry==1){
-     angle=1200;
+     angle=1300;
    }
-   else {
-     angle=1400;
+   else if(unload_cherry==0||unload_cherry==2) {
+     angle=1600;
+   }
+   else if(unload_cherry==3){
+     angle=0;
    }
    return angle;
 }
-
